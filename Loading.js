@@ -5,7 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 export default function Loading() {
     return( 
         <LinearGradient
-           colors={['#8e9eab','#eef2f3']}
+           colors={['#ffdde1','#ee9ca7']}
            style={styles.container}
          >
         <StatusBar barStyle="light-content" backgroundColor={'transparent'} translucent={true}/>

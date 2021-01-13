@@ -156,8 +156,6 @@ swipeDown = (state)=> {
     const {data: {main: {temp}, weather}} = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY_W}&units=metric`);
     
     const Adress = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${API_KEY_G}&language=ko`);
-    console.log(Adress.data.results[0].address_components[1].long_name);
-    console.log(weather[0].main);
     this.setState({isLoading: false, temp: temp, location: Adress.data.results[0].address_components[1].long_name, weather: weather[0].main});
   };
 
@@ -168,8 +166,6 @@ swipeDown = (state)=> {
       const {coords: { latitude, longitude}} = await Location.getCurrentPositionAsync();
       this.getWeather(latitude, longitude);
       const position = dfs_xy_conv("toXY",latitude,longitude);
-     // console.log(position);
-      
     }
     catch(error){
       Alert.alert("위치정보 확인 실패", "위치정보 제공에 동의해 주세요");
