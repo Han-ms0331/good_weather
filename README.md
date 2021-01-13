@@ -1,2 +1,2 @@
-# good_weather
+# Good Weather
 weather App
